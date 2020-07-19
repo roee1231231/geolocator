@@ -1,0 +1,29 @@
+body {
+    text-align: center;
+    background-color: lightblue;
+}
+
+#search-form {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.ip-card {
+    padding: 10px;
+    text-align: left;
+    margin: 20px;
+    border-style: outset;
+    border-color: blue;
+    width: 300px;
+    height: fit-content;
+
+}
