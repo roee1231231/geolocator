@@ -27,7 +27,7 @@ app.get('/myip', (req, res) => {
     const query = req.headers['x-forwarded-for'] || req.connection.remoteAddress
     console.log('The ip is:')
     console.log(query)
-    search(query, (error=undefined, data=undefined) => {
+    search(query, true, (error=undefined, data=undefined) => {
         if (error) {
             return false
         }
@@ -38,7 +38,7 @@ app.get('/myip', (req, res) => {
 app.get('/search', (req, res) => {
 
     const query = req.query.query
-    search(query, (error=undefined, data=undefined) => {
+    search(query, false, (error=undefined, data=undefined) => {
         if (error) {
             return res.render('error', error)
         }

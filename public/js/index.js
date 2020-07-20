@@ -30,8 +30,6 @@ const renderCard = (data) => {
 
 document.addEventListener('DOMContentLoaded', () => {
     fetch('/myip').then((data) => {
-        console.log('fetched data')
-        console.log(data)
         data.json().then((data) => {
             console.log(data)
             try{
