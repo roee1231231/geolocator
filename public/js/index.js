@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         data.json().then((data) => {
             console.log(data)
             try{
+                data.body.ip = 'Your IP: ' + data.body.ip
                 renderCard(data.body)
             } catch {
                 console.log('problem fetching your ip data')
