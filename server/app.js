@@ -23,10 +23,18 @@ app.get('', (req, res) => {
     res.render('index')
 })
 
+app.get('/myip', (req, res) => {
+    const query = req.connection.remoteAddress
+    search(query, (error=undefined, data=undefined) => {
+        if (error) {
+            return false
+        }
+        return res.send(data)
+    })
+})
+
 app.get('/search', (req, res) => {
-    console.log('passed get')
     const query = req.query.query
-    console.log(query)
     search(query, (error=undefined, data=undefined) => {
         if (error) {
             return res.render('error', error)
@@ -36,5 +44,5 @@ app.get('/search', (req, res) => {
 })
 
 app.listen(port, () =>{
-    console.log(`locator listening on port ${port}`)
+    console.log(`locator listening on port $`)
 })

@@ -1,3 +1,5 @@
+const { response } = require("express")
+
 const elements = {
     searchForm: document.getElementById('search-form'),
     textInput: document.getElementById('text-input'),
@@ -27,6 +29,18 @@ const renderCard = (data) => {
     elements.cardsContainer.insertAdjacentHTML('beforeend', markUp)
     elements.statusMessage.innerHTML = ''
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    fetch('/myip').then((data) => {
+        data.json().then((data) => {
+            try{
+                renderCard(data.body)
+            } catch {
+                console.log('problem fetching your ip data')
+            }
+        })
+    })
+})
 
 elements.searchForm.addEventListener('submit', (e) => {
     e.preventDefault()
