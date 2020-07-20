@@ -12,6 +12,7 @@ const partialsPath = path.join(__dirname, "../templates/partials")
 hbs.registerPartials(partialsPath)
 
 const app = express()
+const port = process.env.PORT || 3000
 
 app.set('view engine', 'hbs')
 app.set('views', viewsPath)
@@ -34,6 +35,6 @@ app.get('/search', (req, res) => {
     })
 })
 
-app.listen(3000, () =>{
-    console.log('locator listening on port 3000')
+app.listen(port, () =>{
+    console.log(`locator listening on port ${port}`)
 })

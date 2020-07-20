@@ -32,7 +32,7 @@ elements.searchForm.addEventListener('submit', (e) => {
     e.preventDefault()
     elements.statusMessage.innerHTML = 'Searching...'
     try {
-        fetch(`http://localhost:3000/search?query=${elements.textInput.value}`).then((data) => {
+        fetch(`/search?query=${elements.textInput.value}`).then((data) => {
             data.json().then((data) => {
                 console.log(data.body)
                 try {
