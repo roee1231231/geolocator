@@ -24,7 +24,7 @@ app.get('', (req, res) => {
 })
 
 app.get('/myip', (req, res) => {
-    const query = req.ip
+    const query = req.connection.remoteAddress
     console.log('The ip is:')
     console.log(query)
     search(query, (error=undefined, data=undefined) => {
