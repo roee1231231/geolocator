@@ -5,10 +5,7 @@ const elements = {
     statusMessage: document.getElementById('status-message')
 }
 
-debugger
-
 const renderCard = (data) => {
-    debugger
     const languages = (lans) => {
         const lst = lans.map(lan => lan.name)
         return lst.join(', ')
