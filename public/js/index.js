@@ -1,5 +1,3 @@
-const { response } = require("express")
-
 const elements = {
     searchForm: document.getElementById('search-form'),
     textInput: document.getElementById('text-input'),
@@ -7,7 +5,10 @@ const elements = {
     statusMessage: document.getElementById('status-message')
 }
 
+debugger
+
 const renderCard = (data) => {
+    debugger
     const languages = (lans) => {
         const lst = lans.map(lan => lan.name)
         return lst.join(', ')
@@ -32,7 +33,10 @@ const renderCard = (data) => {
 
 document.addEventListener('DOMContentLoaded', () => {
     fetch('/myip').then((data) => {
+        console.log('fetched data')
+        console.log(data)
         data.json().then((data) => {
+            console.log(data)
             try{
                 renderCard(data.body)
             } catch {

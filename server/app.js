@@ -3,6 +3,7 @@ const path = require('path')
 const hbs = require('hbs')
 const express = require('express')
 const search = require('./search')
+debugger
 
 // Directory paths
 const publicPath = path.join(__dirname, "../public")
@@ -24,16 +25,24 @@ app.get('', (req, res) => {
 })
 
 app.get('/myip', (req, res) => {
-    const query = req.connection.remoteAddress
+    debugger
+    const query = req.ip
+    console.log('The ip is:')
+    console.log(query)
+    debugger
     search(query, (error=undefined, data=undefined) => {
         if (error) {
             return false
         }
+        debugger
         return res.send(data)
     })
 })
 
 app.get('/search', (req, res) => {
+
+    debugger
+
     const query = req.query.query
     search(query, (error=undefined, data=undefined) => {
         if (error) {
@@ -44,5 +53,5 @@ app.get('/search', (req, res) => {
 })
 
 app.listen(port, () =>{
-    console.log(`locator listening on port $`)
+    console.log(`locator listening on port ${port}`)
 })
