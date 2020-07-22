@@ -1,7 +1,7 @@
 const elements = {
-    searchForm: document.getElementById('search-form'),
-    textInput: document.getElementById('text-input'),
-    cardsContainer: document.getElementById('cards-container'),
+    searchForm: document.querySelector('.form'),
+    textInput: document.querySelector('.form-input'),
+    cardsContainer: document.querySelector('.cards-box'),
     statusMessage: document.getElementById('status-message')
 }
 
@@ -17,7 +17,7 @@ const renderCard = (data) => {
     // }
     // ${emoji(data.location.country_flag_emoji_unicode)}&#1F1EE;&#1F1F1;
     markUp = `
-    <div class="ip-card">
+    <div class="cards-box-card">
         <h3 style="text-decoration:underline;text-align:center;">${data.ip}</h3>
         <p><b>Country: </b>${data.country_name}</p>
         <p><b>Estimated city: </b>${data.region_name}</p>
@@ -26,6 +26,7 @@ const renderCard = (data) => {
     </div>`
     elements.cardsContainer.insertAdjacentHTML('beforeend', markUp)
     elements.statusMessage.innerHTML = ''
+    document.querySelector('.header').style.animation="moveUp 0.5s ease-out forwards"
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -51,6 +52,7 @@ elements.searchForm.addEventListener('submit', (e) => {
                 console.log(data.body)
                 try {
                     renderCard(data.body)
+                    
                 } catch {
                     alert('Invalid input entered in the search')
                     elements.statusMessage.innerHTML = ''

@@ -1,5 +1,3 @@
-
-
 const days = ['Sun', 'Mon', 'Tue', 'Wen', 'Thu', 'Fri', 'Sat']
 const months = ['Jan', 'Feb']
 const daysLimit = {

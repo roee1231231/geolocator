@@ -3,25 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>Locator</title>
 </head>
 <body>
-    <h1>Welcome to your GeoLocator!</h1>
-    <h2>Enter the ip you would like to search below:</h2>
-    <form id="search-form">
-        <input type="text" placeholder="Search ip here" id="text-input">
-        <button type="submit">Search</button>
-    </form>
-    <p id="status-message"></p>
-    <div id="cards-container">
-        {{!-- <div class="ip-card">
-            <h3 style="text-decoration:underline;text-align:center;">--ip here--</h3>
-            <p><b>Country: </b>--country here--</p>
-            <p><b>Estimated city: </b>--city--</p>
-            <p><b>Spoken languages: </b>--languages--</p>
-            <p><b>Calling code: </b>--calling code--</p>
-        </div> --}}
+    <div class="main-block">
+        <div class="header">
+            <h1 class="header-main">Welcome to your GeoLocator!</h1>
+            <h2 class="header-sub">Enter the ip you would like to search below:</h2>
+            <form class="form">
+                <input type="text" placeholder="Search ip here" class="form-input">
+                <button type="submit" class="form-btn">Search</button>
+            </form>
+            <p id="status-message"></p>
+        </div>
+        <div class="cards-box">
+            {{!-- <div class="cards-box-card">
+                <h3 style="text-decoration:underline;text-align:center;">--ip here--</h3>
+                <p><b>Country: </b>--country here--</p>
+                <p><b>Estimated city: </b>--city--</p>
+                <p><b>Spoken languages: </b>--languages--</p>
+                <p><b>Calling code: </b>--calling code--</p>
+            </div> --}}
+        </div>
     </div>
     <script src="/js/index.js"></script>
 </body>
