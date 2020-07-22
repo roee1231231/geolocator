@@ -55,6 +55,8 @@ body {
     outline: none;
     text-align: center;
     font-family: inherit;
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
 
 .form-input:focus::placeholder {
@@ -94,11 +96,11 @@ body {
 
 @keyframes moveUp {
     0% {
-        top: 50%
+        top: 50%;
     }
 
     100% {
-        top: 20%
+        top: 25%;
     }
 }
 
@@ -107,8 +109,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     /* visibility: hidden; */
-    margin: 40px;
-    top: 40%;
+    top: 50%;
     padding: 15px;
     text-align: left;
     line-height: 1.7;
